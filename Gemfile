@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "refile", require: "refile/rails", github: "refile/refile"
 
 gem "rails", "4.2.3"
 gem "sqlite3"
