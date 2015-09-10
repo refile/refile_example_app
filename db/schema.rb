@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910090822) do
+ActiveRecord::Schema.define(version: 20150910113201) do
+
+  create_table "documents", force: :cascade do |t|
+    t.integer "post_id",           null: false
+    t.string  "file_id",           null: false
+    t.string  "file_filename",     null: false
+    t.string  "file_size",         null: false
+    t.string  "file_content_type", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"

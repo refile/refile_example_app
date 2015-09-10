@@ -9,4 +9,25 @@
   <%= attachment_image_tag(@post, :image, :fill, 200, 200) %>
 </p>
 
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Filename</th>
+      <th>Content type</th>
+      <th>Size</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @post.documents.each do |document| %>
+      <tr>
+        <th><%= link_to document.file_filename, attachment_url(document, :file) %></th>
+        <th><%= document.file_content_type %></th>
+        <th><%= number_to_human_size document.file_size %></th>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
 <%= simple_format @post.body %>
