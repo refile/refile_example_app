@@ -4,18 +4,25 @@
       <div class="form-group">
         <%= form.label :title %>
         <%= form.text_field :title, class: "form-control" %>
+        <%= field_errors(@post, :title) %>
       </div>
       <div class="form-group">
         <%= form.label :image %>
-        <%= form.attachment_field :image %>
+        <p>
+          <%= attachment_image_tag @post, :image, :fill, 60, 60 %>
+          <%= form.attachment_field :image %>
+        </p>
+        <%= field_errors(@post, :image) %>
       </div>
       <div class="form-group">
         <%= form.label :documents_files, "Documents" %>
         <%= form.attachment_field :documents_files, multiple: true %>
+        <%= field_errors(@post, :documents_files) %>
       </div>
       <div class="form-group">
         <%= form.label :body %>
         <%= form.text_area :body, class: "form-control" %>
+        <%= field_errors(@post, :body) %>
       </div>
       <div class="form-group">
         <%= form.submit class: "btn btn-primary" %>

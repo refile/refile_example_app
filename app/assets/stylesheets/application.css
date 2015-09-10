@@ -26,3 +26,8 @@ td.image img {
   width: 60px;
   height: 60px;
 }
+
+p.field-error {
+  margin: 0.2em 0 1em;
+  color: #c00;
+}

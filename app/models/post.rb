@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   validates_presence_of :title
 
-  attachment :image
+  attachment :image, type: :image
 
   has_many :documents, dependent: :destroy
 
