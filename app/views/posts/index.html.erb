@@ -1,5 +1,26 @@
-<ol>
-  <% @post.each do |post| %>
-    <li><%= link_to post.title, post %></li>
-  <% end %>
-</ol>
+<h1>Posts</h1>
+
+<p>
+  <%= link_to "New post", :new_post, class: "btn btn-primary", role: "button" %>
+</p>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @post.each do |post| %>
+      <tr>
+        <td class="image">
+          <%= attachment_image_tag post, :image, :fill, 60, 60 %>
+        </td>
+        <td>
+          <%= link_to post.title, post %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

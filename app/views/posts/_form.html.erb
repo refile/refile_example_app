@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-8">
+    <%= form_for @post do |form| %>
+      <div class="form-group">
+        <%= form.label :title %>
+        <%= form.text_field :title, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= form.label :image %>
+        <%= form.attachment_field :image %>
+      </div>
+      <div class="form-group">
+        <%= form.label :body %>
+        <%= form.text_area :body, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= form.submit class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-4"></div>
+</div>

@@ -1,0 +1,12 @@
+<h1><%= @post.title %></h1>
+
+<p>
+  <%= link_to "Edit post", [:edit, @post], class: "btn btn-primary" %>
+  <%= link_to "Delete post", @post, data: { method: "delete", confirm: "Are you sure?" }, class: "btn btn-danger" %>
+</p>
+
+<p>
+  <%= attachment_image_tag(@post, :image, :fill, 200, 200) %>
+</p>
+
+<%= simple_format @post.body %>
